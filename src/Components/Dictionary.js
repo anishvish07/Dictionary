@@ -91,7 +91,7 @@ const Dictionary = (props) => {
                   { (meaning.partOfSpeech === "interjection") && (
 
                      <div>  
-                          <p>Examples : {definition.example}
+                          <p className='exmp'>Examples : {definition.example}
                           
                           </p>
                      </div>
