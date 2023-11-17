@@ -57,7 +57,7 @@ const Dictionary = (props) => {
                 <input type='search' name='search' id='searchInput' className='search side input' placeholder='Type Word'/>
                 <button className='btn another-side' onClick={props.dict} > search </button>
                 </div>
-                <center className='error-msg'>{showSpeechNotSupportedMessage ?  <p className='fs-5 text-danger'>Browser Doesn't support Speak Functionality </p>:""}</center>
+                <div className='error-msg '>{showSpeechNotSupportedMessage ? <p className='fs-5 text-danger'>Browser Doesn't support Speak Functionality </p>:""}</div>
                 <div className="card body-design">
                 <div className="card-body">
                 <div className="card-title">
