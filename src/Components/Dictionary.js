@@ -24,6 +24,7 @@ const Dictionary = (props) => {
         }else{
           console.log("Browser Doesn't support Speak Functionality ")
           setSpeechSupport(false);
+          return "Browser Doesn't support Speak Functionality ";
         }
     };
     const speakCancel = () =>{
@@ -55,7 +56,7 @@ const Dictionary = (props) => {
                 <input type='search' name='search' id='searchInput' className='search side input' placeholder='Type Word'/>
                 <button className='btn another-side' onClick={props.dict} > search </button>
                 </div>
-                <center>{speechSupport ? "" : <p className='fs-5 text-danger'>Browser Doesn't Support Speak Functionality</p>}</center>
+                <center className='error-msg'>{speechSupport ? "" : <p className='fs-5 text-danger'>{speak}</p>}</center>
                 <div className="card body-design">
                 <div className="card-body">
                 <div className="card-title">
