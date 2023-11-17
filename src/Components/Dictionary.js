@@ -8,6 +8,7 @@ const Dictionary = (props) => {
     const {dict ,data} = props;
     const [synthesis , setSynthesis] = useState(null);
     const [speechSupport, setSpeechSupport] = useState(true);
+     const [showSpeechNotSupportedMessage, setShowSpeechNotSupportedMessage] = useState(false);
     useEffect(()=>{
         const synth = window.speechSynthesis;
         if(!synth){
@@ -24,7 +25,7 @@ const Dictionary = (props) => {
         }else{
           console.log("Browser Doesn't support Speak Functionality ")
           setSpeechSupport(false);
-          return "Browser Doesn't support Speak Functionality ";
+          setShowSpeechNotSupportedMessage(true)
         }
     };
     const speakCancel = () =>{
@@ -56,12 +57,16 @@ const Dictionary = (props) => {
                 <input type='search' name='search' id='searchInput' className='search side input' placeholder='Type Word'/>
                 <button className='btn another-side' onClick={props.dict} > search </button>
                 </div>
-                <center className='error-msg'>{speechSupport ? "" : <p className='fs-5 text-danger'>{speak}</p>}</center>
+                <center className='error-msg'>{showSpeechNotSupportedMessage ?  <p className='fs-5 text-danger'>Browser Doesn't support Speak Functionality </p>:""}</center>
                 <div className="card body-design">
                 <div className="card-body">
                 <div className="card-title">
                 <h3> Keywords :- </h3> 
-             <button className="speak" onDoubleClick={speakCancel} onClick={() => {
+             <button className="speak" onDoubleClick={(()=>{
+                     speakCancel();
+                     setShowSpeechNotSupportedMessage(false);
+
+             })} onClick={() => {
               data[0].meanings[0].definitions.forEach((def) => {
                 speak(def.definition);
               });
