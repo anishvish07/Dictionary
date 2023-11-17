@@ -14,13 +14,9 @@ const ContactUsCard = () => {
         <div className="social-links">
           
             <BiRename className="social-icon" />
-         
         
             <BiLogoGmail className="social-icon" />
-         
-          
-           
-         
+        
         </div>
 
         <div className="developer-info">

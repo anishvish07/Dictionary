@@ -88,8 +88,7 @@ const Dictionary = (props) => {
 
 }
 
-  
-                    </div>
+                  </div>
                 ))}
                {
                         ( meaning.antonyms.length > 0) && (<p className='def text-warning fs-5'>Antonyms : {meaning.antonyms.join(', ')}</p>)
