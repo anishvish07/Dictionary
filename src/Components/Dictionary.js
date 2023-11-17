@@ -25,7 +25,6 @@ const Dictionary = (props) => {
             
         }
     }
-
     if (!data || !data[0] || !data[0].meanings || !data[0].meanings[0] || !data[0].meanings[0].definitions) {
   
     return (
@@ -34,7 +33,6 @@ const Dictionary = (props) => {
           <input type='search' name='search' id='searchInput' className='search side input' placeholder='Type Word' />
           <button className='btn another-side' onClick={props.dict}> search </button>
         </div>
-        
       <div class="containeres">
   <span></span>
   <span></span>
