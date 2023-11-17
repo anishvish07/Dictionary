@@ -1,0 +1,216 @@
+.search-bar {
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-top: 40px;
+    border: 3px double white;
+    border-image: linear-gradient(to right, white, indigo);
+    animation: change 2s ease-in-out infinite;
+    border-image-slice: 1;
+}
+
+.search {
+    width: 25%;
+    height: 90%;
+    margin: 2px 2px;
+}
+
+@media screen and (min-width :350px) and (max-width: 1023px) {
+    .search {
+        width: 44%;
+    }
+    .search-bar {
+        width: 90%;
+    }
+}
+
+.side {
+    float: left;
+}
+
+.another-side {
+    float: right;
+}
+
+.btn {
+    font-size: 0.7rem;
+    padding: 0.9rem 3.2rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(24, 24, 33);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+}
+
+@media (max-width: 600px) {
+    .btn {
+        font-size: 0.7rem;
+        padding: 0.9rem 2.1rem;
+    }
+}
+
+.btn:active {
+    scale: 0.92;
+}
+
+.btn:hover {
+    background: rgb(90, 122, 187);
+    background: linear-gradient(260deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+    color: rgb(4, 4, 38);
+}
+
+.input {
+    border: none;
+    padding: 1rem;
+    background: #e8e8e8;
+    box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #4b4545;
+    transition: 0.3s;
+}
+
+.input:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #d2cfcf;
+    transition: 0.3s;
+}
+
+.body-design {
+    margin-top: 70px;
+    overflow: scroll;
+    height: 450px;
+    background-image: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-shadow: 0px 10px 30px rgb(151, 119, 203);
+    /* background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWFiYmdydWp1cms5YnA0Y2U1NHNqZ2Iyb3dxZ213amUzMDRjZWszYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3og0IFrHkIglEOg8Ba/giphy.gif'); */
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.speak {
+    float: right;
+    border-radius: 50%;
+    margin-right: 180px;
+    color: indigo;
+    width: 90px;
+    height: 90px;
+}
+
+@media (min-width: 350px) and (max-width:1023px) {
+    .speak {
+        float: right;
+        margin: 2px 20px;
+    }
+}
+
+.Title {
+    color: #4CAF50;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transform: translateX(-100%);
+    text-transform: capitalize;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.boundary {
+    border: 1px solid white;
+    width: auto;
+    border-radius: 25px;
+}
+
+.def {
+    margin-left: 15px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.containeres {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    height: 96px;
+    width: 96px;
+    animation: rotate 1.2s linear infinite;
+    background-color: #9b59b6;
+    background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+}
+
+.containeres span {
+    position: absolute;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    background-color: #9b59b6;
+    background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+}
+
+.containeres span:nth-of-type(1) {
+    filter: blur(5px);
+}
+
+.containeres span:nth-of-type(2) {
+    filter: blur(10px);
+}
+
+.containeres span:nth-of-type(3) {
+    filter: blur(25px);
+}
+
+.containeres span:nth-of-type(4) {
+    filter: blur(50px);
+}
+
+.containeres::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #fff;
+    border: solid 5px #ffffff;
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
