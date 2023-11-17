@@ -7,16 +7,23 @@ import {FaPlay } from 'react-icons/fa6'
 const Dictionary = (props) => {
     const {dict ,data} = props;
     const [synthesis , setSynthesis] = useState(null);
+    const [speechSupport, setSpeechSupport] = useState(true);
     useEffect(()=>{
         const synth = window.speechSynthesis;
-        if(synth){
-            setSynthesis(synth);
+        if(!synth){
+            console.log("Browser Doesn't Support Speak Functionality")  
+            setSpeechSupport(false);                
+        }else{
+          setSynthesis(synth);
         }
     },[]);
     const speak = (text) =>{
         if(synthesis && text) {
             const utterance = new SpeechSynthesisUtterance(text);
             synthesis.speak(utterance);
+        }else{
+          console.log("Browser Doesn't support Speak Functionality ")
+          setSpeechSupport(false);
         }
     };
     const speakCancel = () =>{
@@ -48,6 +55,7 @@ const Dictionary = (props) => {
                 <input type='search' name='search' id='searchInput' className='search side input' placeholder='Type Word'/>
                 <button className='btn another-side' onClick={props.dict} > search </button>
                 </div>
+                <center>{speechSupport ? "" : <p className='fs-5 text-danger'>Browser Doesn't Support Speak Functionality</p>}</center>
                 <div className="card body-design">
                 <div className="card-body">
                 <div className="card-title">
