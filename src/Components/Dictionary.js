@@ -2,6 +2,7 @@ import React, { useState , useEffect } from 'react';
 import './Dictionary.css';
 import {GiBurningDot } from 'react-icons/gi'
 import 'animate.css';
+import { Link ,BrowserRouter as Router , Routes ,Route } from 'react-router-dom';
 import {FaPlay } from 'react-icons/fa6'
 const Dictionary = (props) => {
     const {dict ,data} = props;
@@ -30,7 +31,7 @@ const Dictionary = (props) => {
     return (
       <div>
         <div className='search-bar'>
-          <input type='search' name='search' id='searchInput' className='search side input' placeholder='Enter The Word...' />
+          <input type='search' name='search' id='searchInput' className='search side input' placeholder='Type Word' />
           <button className='btn another-side' onClick={props.dict}> search </button>
         </div>
         
@@ -47,7 +48,7 @@ const Dictionary = (props) => {
     return (
         <div>
                 <div className='search-bar'>
-                <input type='search' name='search' id='searchInput' className='search side input' placeholder='Enter The Word...'  />
+                <input type='search' name='search' id='searchInput' className='search side input' placeholder='Type Word'/>
                 <button className='btn another-side' onClick={props.dict} > search </button>
                 </div>
                 <div className="card body-design">
@@ -97,7 +98,7 @@ const Dictionary = (props) => {
 
                ))}
                <div className='boundry m-2 Title'>
-              <p> SourceUrl :- {data[0].sourceUrls ? data[0].sourceUrls:" "}</p>
+              <p> SourceUrl :- {data[0].sourceUrls ? <Link to={data[0].sourceUrls}>{data[0].sourceUrls}</Link>:" "}</p>
               </div>
                 </div>
                 </div>
